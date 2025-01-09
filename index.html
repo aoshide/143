@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Лента воспоминаний</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf6f9;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffe6e9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            color: #ff6699;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .memory {
+            width: 90%;
+            max-width: 600px;
+            border: 2px solid #ff99b8;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .memory img {
+            width: 100%;
+            display: block;
+        }
+        .memory .caption {
+            padding: 15px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .memory .caption p {
+            margin: 0;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .memory {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>   
+    <div class="containqi">
+        <button onclick="navigateToQuiz()">Начать викторину</button>
+    </div>
+    <div class="container">
+        <button onclick="document.getElementById('audioPlayer').play()">Воспроизвести</button>
+        <button onclick="document.getElementById('audioPlayer').pause()">Пауза</button>
+    </div>
+    
+    <audio id="audioPlayer">
+        <source src="audio/24на7.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает элемент audio.
+    </audio>
+    
+    <div class="header">
+        <h1>Лента наших воспоминаний</h1>
+        <p>Каждый момент с тобой — это чудесно</p>
+    </div>
+    <div class="gallery">
+
+        <div class="memory">
+            <img src="img/image1.jpg" alt="Наша милая и комфортная поездка">
+            <div class="caption">
+                <p>Вместе едем кушоем сладости слушаем песни хихи</p>
+            </div>
+        </div>
+        <div class="memory">
+            <img src="img/image2.jpg" alt="твая милая фотека">
+            <div class="caption">
+                <p>Вместе кушаем и ми кушаем друг друга</p>
+            </div>
+        </div>
+
+        <div class="memory">
+            <img src="img/image3.jpg" alt="Сидим поем песни ">
+            <div class="caption">
+                <p>День,когда наслаждались песнями пев их в парке ,хотелось бы повторить :D</p>
+            </div>
+        </div>
+
+        <div class="memory">
+            <img src="img/image5.jpg" alt="Сюрприз в один летний день">
+            <div class="caption">
+                <p>Наши первые парные украшения ^^</p>
+            </div>
+
+        <div class="memory">
+            <img src="img/image6.jpg" alt="Сидим поем песни ">
+            <div class="caption">
+                <p>после учебы сидим вместе и няшимся((</p>
+            </div>
+        </div>
+        <div class="memory">
+            <img src="img/image7.jpg" alt="Сидим поем песни ">
+            <div class="caption">
+                <p>Очень классный и позитивный день на природе, учим скороговорки( </p>
+            </div>
+        </div>
+        <div class="memory">
+            <img src="img/image8.jpg" alt="Сидим поем песни ">
+            <div class="caption">
+                <p>Просто офигеть какой день, мы сидели на тое моего брата и еще я тебя покормиил малышка <3</p>
+            </div>
+        </div>
+        <div class="memory">
+            <img src="img/image9.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p>Наши милые котики,мой самый любимый подарок ((</p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image12.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p>ОБОЖАЮЮ ТЕБЯ ЭТО САМАЯ ЛУЧШАЯ ОТКРЫТКААА ((</p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image13.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p>хыххых тоже обожаю этот день романтичный очень,гуляем смотря на красоту и просто мила сидели смарите ета мая красотка стеснящка</p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image14.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p>Пришол к типе и очень классна гуляли ещо дождь пошел но мы спрятались в маркете каеф и поигрались еее лесго попили вкусный очень обожаю тебя <3</p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image15.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p></p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image16.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p> ОЧЕНЬ КЛАССНЫЙ ДЕНЬ оплатил твою покупку и боже ты поцеловала меня это было так мило (((( потом дождь снег жестко пошел я дал тебе свою зипку малышка и мы пошли смотреть елку ИМБАА<p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image17.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p></p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image18.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p>CИДИМ ТАК МИЛО В КАФЕШКЕ тоже топ день!! сморели дандадан кушая нло-бургеры проста импа и мило общались и так комфортно сидели обожаю тебя</p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image19.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption">
+                <p></p>
+            </div> 
+        </div>
+        <div class="memory">
+            <img src="img/image20.jpg" alt="Наши милые котики,мой самый любимый подарок">
+            <div class="caption"> 
+                <p>ЫХЫХЫХХ празднуем нови гоод :> проста очин мили день подарили друг другу подарочки( ее подарки самые лучшие) а я ей фотокамеру хехехе я так рад что тепе понравилось я боялся што тепе не понравица обожаю тепя жаан</p>
+            </div> 
+        </div>
+        </div>
+    </div>
+    <script>
+        function navigateToQuiz() {
+          window.location.href = 'quiz.html'; // Ссылка на викторину
+        }
+      </script>
+</body>
+</html>

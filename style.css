@@ -1,0 +1,37 @@
+body {
+    background-image: url('img/b5b1762c-d9ad-4bb8-8700-f2601482fdfc.jpg'); /* Укажите путь к вашему изображению */
+    background-size: cover; /* Фон заполняет весь экран */
+    background-position: center; /* Центрирование фона */
+    background-repeat: no-repeat;
+    margin: 0; /* Убирает отступы браузера */
+    font-family: Arial, sans-serif;
+  }
+button {
+    background-color: #FF69B4; /* Розовый цвет */
+    color: white; /* Белый текст */
+    border: none; /* Без рамки */
+    padding: 10px 20px; /* Отступы */
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Занимает всю высоту экрана */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде руки */
+    border-radius: 8px; /* Сглаженные углы */
+    transition: background-color 0.3s; /* Плавное изменение цвета */
+    margin: 5px; /* Отступы между кнопками */
+}
+
+button:hover {
+    background-color: #FF1493; /* Более яркий розовый при наведении */
+}
+
+.container {
+    display: flex;
+    gap: 10px; /* Отступы между кнопками */
+}
+@media (max-width: 600px) {
+    button {
+        font-size: 14px; /* Уменьшаем размер шрифта на маленьких экранах */
+        padding: 8px 16px; /* Меньше отступов */
+    }
+}

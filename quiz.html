@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe4e1;
+      color: #d12c50;
+      margin: 0;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .options button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f8b1b4;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .options button:hover {
+      background-color: #d12c50;
+    }
+    .result {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+    .next-button {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .next-button:hover {
+      background-color: #d81b60;
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .options button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f8b1b4;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .options button:hover {
+      background-color: #d12c50;
+    }
+    .result {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+    .next-button {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .next-button:hover {
+      background-color: #d81b60;
+    }
+    .back-button {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #fba0ba;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .back-button:hover {
+      background-color: #ec84c0;
+    }
+  </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Викторина: О нашей любви</h1>
+        <div id="quiz">
+          <p class="question" id="question"></p>
+          <div class="options" id="options"></div>
+          <button class="next-button" id="next-button" onclick="goToNextQuestion()">Следующий вопрос</button>
+        </div>
+        <div class="result" id="result"></div>
+        <a href="index.html" class="back-button">Назад на главную</a>
+      </div>
+
+  <script>
+    // Массив вопросов
+    const questions = [
+      {
+        question: "Когда было наше первое свидание?",
+        options: ["11 июля", "8 июля", "15 июля", "12 июля"],
+        correct: 0, // Индекс правильного ответа
+      },
+
+      {
+        question: "Мой любимый цвет?",
+        options: ["Розовый", "Зеленый", "Темно-синий", "Фиолетовый"],
+        correct: 2,
+      },
+      {
+        question: "Где мы впервые встретились?",
+        options: ["В парке", "На улице", "На берегу", "В бусе"],
+        correct: 3,
+      },
+      {
+        question: "Где мы впервые погуляли?",
+        options: ["В парке", "В антикино", "В школе", "В кино"],
+        correct: 1,
+      },
+      {
+        question: "Когда мы начали встречаться?",
+        options: ["9 июня", "14 июля", "9 июля", "11 июля"],
+        correct: 3,
+      },
+    ];
+
+    let currentQuestionIndex = 0; // Индекс текущего вопроса
+
+    function loadQuestion() {
+    const questionElement = document.getElementById("question");
+    const optionsElement = document.getElementById("options");
+    const nextButton = document.getElementById("next-button");
+    const resultElement = document.getElementById("result");
+
+    // Очистка предыдущего результата и кнопки
+    resultElement.textContent = "";
+    nextButton.style.display = "none";
+
+    // Отображение вопроса
+    const currentQuestion = questions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+
+    // Отображение вариантов ответа
+    optionsElement.innerHTML = ""; // Очистка предыдущих вариантов
+    currentQuestion.options.forEach((option, index) => {
+      const button = document.createElement("button");
+      button.textContent = option;
+      button.onclick = () => checkAnswer(index);
+      optionsElement.appendChild(button);
+    });
+  }
+
+  function checkAnswer(selectedIndex) {
+    const resultElement = document.getElementById("result");
+    const nextButton = document.getElementById("next-button");
+    const currentQuestion = questions[currentQuestionIndex];
+
+    if (selectedIndex === currentQuestion.correct) {
+      resultElement.textContent = "Правильно! 💖";
+      resultElement.style.color = "#28a745";
+    } else {
+      resultElement.textContent = "Неправильно 😢";
+      resultElement.style.color = "#d12c50";
+    }
+
+    // Показать кнопку "Следующий вопрос"
+    nextButton.style.display = "block";
+  }
+
+  function goToNextQuestion() {
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+      loadQuestion(); // Загрузка следующего вопроса
+    } else {
+      showFinalMessage(); // Показ финального сообщения
+    }
+  }
+
+  function showFinalMessage() {
+    const quizElement = document.getElementById("quiz");
+    quizElement.innerHTML = "<h2>Ти прошла я верю типе ! 💕</h2><p>Спасибо за игру!</p>";
+  }
+
+  // Загрузка первого вопроса
+  loadQuestion();
+</script>
+
+</body>
+</html>
